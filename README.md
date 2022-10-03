@@ -1,3 +1,5 @@
 # JavaSimpleStuff
 simple exercises for beginners in Java
-added: to test gitbash
+removed: to test gitbash
+this message was unnecessary
+
