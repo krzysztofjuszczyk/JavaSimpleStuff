@@ -180,7 +180,7 @@ public class Basic {
     public int[] ex160(int[] arrayIn, int k) {
         System.out.println("ex 160");
         int[] minElementsArray = new int[k];
-        for (int i=0; i<minElementsArray.length; i++){
+        for (int i = 0; i < minElementsArray.length; i++) {
             minElementsArray[i] = Integer.MAX_VALUE;
         }
         int[] tempArray = new int[arrayIn.length];
@@ -207,11 +207,35 @@ public class Basic {
         System.out.println("Min elements array");
         printArray(minElementsArray);
         return minElementsArray;
+    }
 
+    // ex167 Move every zero to the right side of a given array of integer
+    public int[] ex167_MoveZero(int[] array) {
+        if (array == null) {
+            throw new IllegalArgumentException();
+        }
+
+        boolean needToRepeatMovingZeroes = true;
+        while (needToRepeatMovingZeroes) {
+            for (int i = 0; i < array.length - 1; i++) {
+                needToRepeatMovingZeroes = false;
+                if (array[i] == 0 && array[i + 1] != 0) {
+                    swapNumbers(array, i, i + 1);
+                } else needToRepeatMovingZeroes = true;
+            }
+        }
+
+        return array;
+    }
+
+    private static void swapNumbers(int[] array, int a, int b) {
+        int temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
     }
 
 }
 
-    //KONIEC MAINA
+//KONIEC MAINA
 
 
